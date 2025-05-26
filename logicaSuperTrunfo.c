@@ -4,7 +4,7 @@
 
 int main() {
     
-    // variaveis das cartas
+    // variáveis das cartas
     char estado1, estado2;
     char codigoCarta1[5], codigoCarta2[5];
     char nomeCidade1[50], nomeCidade2[50];
@@ -16,12 +16,12 @@ int main() {
     float densidadePop1, densidadePop2;
     float pibCapita1, pibCapita2;
 
-    //variaveis do menu
+    //variáveis do menu
 
     int opcao, regra, atributos;
 
-    // variaveis do jogo e escolha do modo de jogo
-    int escolhaModo, escolhaCarta;
+    // variáveis do jogo e escolha do modo de jogo
+    int escolhaModo, escolhaCarta, escolhaRegras;
     int carta1, carta2;
     char *nomeJogador, *nomeJogador2, *nomeComputador;
     int popJogador, popJogador2, popComputador, ptJogador, ptJogador2, ptComputador;
@@ -356,7 +356,7 @@ int main() {
                             }
                         }
 
-                //exibição da escolha do modo de jogo   
+                // Exibição da escolha do modo de jogo   
             }else if (escolhaModo == 2) {
                 printf("Modo de jogo: Jogador vs Computador\n");
                 printf("Carregando....\n");
@@ -663,7 +663,44 @@ int main() {
         case 2:
             // Exibição das regras do jogo
             printf("Regras do jogo:\n");
-            
+            printf("Selecione a opção correspondente a regra que deseja consultar:\n");
+            printf("1 — Como jogar\n");
+            printf("2 — Atributos das cartas\n");
+            printf("3 — Como é calculada a densidade populacional e o PIB per capita\n");
+            printf("4 — sair\n");
+            printf("Escolha uma opção: ");
+            scanf("%d", &escolhaRegras);
+            printf("\n");
+
+            switch (escolhaRegras) {
+                case 1:
+                    printf("Como jogar:\n");
+                    printf("1. Escolha o modo de jogo: Jogador vs Jogador ou Jogador vs Computador.\n");
+                    printf("2. Escolha uma carta\n");
+                    printf("3. Cadastre os dados das cartas, incluindo estado, código, nome da cidade, população, área, PIB e pontos turísticos.\n");
+                    printf("4. Densidade populacional e PIB per capita serão calculados automaticamente.\n");
+                    printf("5. Escolha um atributo para jogar: População, Área, PIB, Pontos turísticos, Densidade populacional, PIB per capita ou escolha aleatória.\n");
+                    printf("6. O jogador com o maior valor do atributo escolhido vence a rodada, exceto em Densidade Populacional.\n");
+                    printf("7. Ao escolher Densidade Populacional, o jogador com menor valor vence.\n");
+                break;
+                case 2:
+                    printf("Atributos das cartas:\n");
+                    printf("1. População: Número de habitantes da cidade. Vence quem tiver maior valor.\n");
+                    printf("2. Área: Tamanho da cidade em km². Vence quem tiver maior valor.\n");
+                    printf("3. PIB: Produto Interno Bruto da cidade em bilhões de reais. Vence quem tiver maior valor.\n");
+                    printf("4. Pontos turísticos: Número de pontos turísticos na cidade. Vence quem tiver maior valor.\n");
+                    printf("5. Densidade populacional: Número de habitantes por quilômetro quadrado (hab/km²). Vence quem tiver menor valor.\n");
+                    printf("6. PIB per capita: Número de reais por pessoa. Vence quem tiver maior valor.\n");
+                break;
+                case 3:
+                printf("Cálculo da Densidade Populacional e PIB per capita:\n");
+                printf("1. A Densidade populacional é calculada utilizando o valor da população e dividindo pelo valor da área (população / área).\n");
+                printf("2. O PIB per capita é calculado utilizando o valor do PIB e dividindo pelo valor da população (PIB / população).\n");
+                break;
+                case 4:
+                    printf("Saindo das regras...\n");
+                return 0;
+            }
         break;
         case 3:
             printf("Saindo do jogo...\n");
